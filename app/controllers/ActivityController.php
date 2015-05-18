@@ -14,8 +14,8 @@ class ActivityController extends \BaseController {
 
         $now = Carbon::now();
         $f_activities = UnionActivity::forward()->get();
-        $c_activities = UnionActivity::currentAndPast()->get();
-		return View::make('activity.index' , array('f_activities'=>$f_activities ,'c_activities' => $c_activities, 'now'=> $now));
+        $cc_activities = UnionActivity::currentAndPast()->get();
+		return View::make('activity.index' , array('f_activities'=>$f_activities ,'c_activities' => $cc_activities, 'now'=> $now));
 	}
 
 	/**
